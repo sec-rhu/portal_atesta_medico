@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perícia Médica - RH HUM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .main-card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            fill: currentColor;
+            vertical-align: middle;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="p-6 md:p-10">
+
+    <!-- Header com a identidade visual do RHU -->
+    <header class="bg-orange-600 text-white rounded-xl p-8 shadow-lg mb-8 text-center">
+        <h1 class="text-4xl font-bold mb-2">Informações Sobre Perícia Médica</h1>
+        <p class="text-lg">Divisão de Recursos Humanos - Hospital Universitário Regional de Maringá</p>
+    </header>
+
+    <!-- Menu de Navegação -->
+    <nav class="main-card flex justify-center flex-wrap gap-4 text-sm font-medium">
+        <a href="#atestados" class="text-blue-800 hover:text-orange-600 transition-colors">Atestados</a>
+        <a href="#pericia" class="text-blue-800 hover:text-orange-600 transition-colors">Perícia Médica</a>
+        <a href="#observacoes" class="text-blue-800 hover:text-orange-600 transition-colors">Observações</a>
+        <a href="#contato" class="text-blue-800 hover:text-orange-600 transition-colors">Contato</a>
+        <a href="#ferramentas" class="text-blue-800 hover:text-orange-600 transition-colors">Ferramentas de IA</a>
+    </nav>
+
+    <main class="container mx-auto">
+        
+        <!-- Mensagem de Introdução -->
+        <section id="intro" class="main-card">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-800">Guia de Atestados e Perícias</h2>
+            <p class="mb-4 text-gray-700 leading-relaxed">
+                Esta página é um guia completo para servidores do HUM sobre a submissão de atestados médicos e o processo de perícia.
+            </p>
+            <p class="text-sm font-medium text-gray-700">Atenção: Atestados devem ser enviados para o RHU, via WhatsApp ou e-mail, em até 24 horas da emissão.
+                <span class="font-bold text-orange-600">Telefone: (44) 3011-9145.</span>
+                <a href="https://api.whatsapp.com/send/?phone=554430119145&text&type=phone_number&app_absent=0" class="text-blue-500 hover:underline ml-2">Abrir WhatsApp</a>
+            </p>
+        </section>
+
+        <!-- Seção de Atestados -->
+        <section id="atestados" class="main-card">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-800">Como Enviar seu Atestado</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Atestados até 3 dias -->
+                <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-700">
+                    <h3 class="font-semibold text-lg text-green-800 mb-2 flex items-center">
+                        <svg class="icon text-green-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Atestados até 3 dias
+                    </h3>
+                    <p class="text-gray-700 mb-2">Envie o atestado via e-Protocol para o RHU.</p>
+                    <a href="https://www.eprotocolo.pr.gov.br/" class="inline-block bg-orange-600 text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-orange-700 transition-colors">Acessar e-Protocolo</a>
+                </div>
+                <!-- A partir do 4º dia -->
+                <div class="bg-orange-50 rounded-lg p-4 border-l-4 border-orange-600">
+                    <h3 class="font-semibold text-lg text-orange-700 mb-2 flex items-center">
+                        <svg class="icon text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1s1 .45 1 1v4c0 .55-.45 1-1 1zm1-8h-2V7h2v2z"/></svg>
+                        A partir do 4º dia
+                    </h3>
+                    <p class="text-gray-700 mb-2">É necessária perícia médica. Atestados devem ser enviados conforme orientação da página.</p>
+                    <a href="#pericia-online" class="inline-block text-sm font-medium text-blue-600 hover:underline">Ver orientações de perícia</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Perícia Médica -->
+        <section id="pericia" class="main-card">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-800">Tipos de Perícia Médica</h2>
+            <div class="space-y-6">
+                <!-- Perícia Online -->
+                <div>
+                    <h3 id="pericia-online" class="font-semibold text-xl text-blue-700 mb-2">Perícia Online</h3>
+                    <p class="text-gray-700 mb-2">Indicada para licença por tratamento de saúde de pessoa da família, licença-maternidade, pós-operatório, doenças infectocontagiosas e atestados subsequentes.</p>
+                    <a href="https://www.administracao.pr.gov.br/SAS/Formulario/Pericia-Medica-Online" class="inline-block bg-orange-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-orange-700 transition-colors mt-2">Acessar Formulário Online</a>
+                </div>
+                <!-- Perícia Presencial -->
+                <div>
+                    <h3 class="font-semibold text-xl text-blue-700 mb-2">Perícia Presencial</h3>
+                    <p class="text-gray-700 mb-2">Necessária para os casos que não se enquadram na modalidade online. A data da perícia é agendada e comunicada por e-mail.</p>
+                    <a href="https://app.pipefy.com/portals/72ff92a5-fa0c-4ba6-be41-7bf111d2d164" class="inline-block bg-orange-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-orange-700 transition-colors mt-2">Agendar Perícia Presencial</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Links Úteis e Observações -->
+        <section id="observacoes" class="main-card">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-800">Observações Importantes e Links Úteis</h2>
+            <ul class="space-y-4 text-gray-700">
+                <li class="flex items-start">
+                    <span class="mr-2 text-green-700 font-bold">&#8227;</span>
+                    <p>O CID (Código Internacional de Doenças) deve constar no atestado. Atenção para os CIDs que exigem patologia específica. <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.administracao.pr.gov.br%2Fsas%2Fpagina%2Fpericias-medicas" class="text-blue-600 hover:underline">Saiba mais</a>.</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-green-700 font-bold">&#8227;</span>
+                    <p>Você pode consultar a homologação do seu atestado diariamente no sistema PIA. <a href="https://www.pia.pr.gov.br/servicos/Servidor/Certidoes-e-Comprovantes/Consultar-dossie-historico-funcional-Epol5GNB" class="text-blue-600 hover:underline">Acessar PIA</a>.</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-green-700 font-bold">&#8227;</span>
+                    <p>Para licenças acima de 30 dias, é necessário agendar retorno no SESMT do HUM. <a href="https://www.npd.uem.br/sesmt/" class="text-blue-600 hover:underline">Agendar no SESMT</a>.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Seção de Contato e Documentação -->
+        <section id="contato" class="main-card">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-800">Contato e Documentação</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-semibold text-xl text-blue-700 mb-2">Divisão de Recursos Humanos</h3>
+                    <p class="text-gray-700"><strong>E-mail:</strong> <a href="mailto:sec-rhu@uem.br" class="text-blue-600 hover:underline">sec-rhu@uem.br</a></p>
+                    <p class="text-gray-700"><strong>Telefone (WhatsApp):</strong> (44) 3011-9145</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-xl text-blue-700 mb-2">Documentos Úteis</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><a href="https://drive.google.com/file/d/1j1WLc10eGpzvJ9MtR7DIdBsAnBeDFRYj/view?usp=sharing" class="text-orange-600 hover:underline">Manual de Perícia Médica</a></li>
+                        <li><a href="https://drive.google.com/file/d/1-7ud_zGA3GQcjp7rHAAfbcVD4tVIJO0I/view?usp=sharing" class="text-orange-600 hover:underline">Tutorial de Envio via e-Protocolo</a></li>
+                        <li><a href="https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2021-08/ltsf_-_formulario.pdf" class="text-orange-600 hover:underline">Formulário para Tratamento de Pessoa da Família</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Funcionalidades Gemini -->
+        <section id="ferramentas" class="main-card">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-800">Ferramentas de IA para a Perícia Médica</h2>
+            
+            <!-- Explicador de Termos Médicos -->
+            <div class="mb-8">
+                <h3 class="text-xl font-medium mb-3">Explicador de Termos Médicos ✨</h3>
+                <p class="text-gray-700 mb-4">Digite um termo médico ou CID para obter uma explicação simples e clara.</p>
+                <input type="text" id="term-input" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors" placeholder="Ex: A09 (CID) ou 'Cervicalgia'">
+                <button id="explain-btn" class="mt-4 bg-blue-800 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-900 transition-colors flex items-center justify-center">
+                    Explicar Termo
+                </button>
+                <div id="explain-output" class="mt-4 p-4 bg-gray-100 rounded-lg hidden"></div>
+            </div>
+
+            <!-- Assistente de Rascunho para Recurso -->
+            <div>
+                <h3 class="text-xl font-medium mb-3">Assistente de Rascunho para Recurso ✨</h3>
+                <p class="text-gray-700 mb-4">Descreva o motivo do seu pedido de reconsideração e gere um rascunho de e-mail formal.</p>
+                <textarea id="draft-input" rows="5" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors" placeholder="Ex: 'Não concordo com o resultado da perícia, pois...'"> </textarea>
+                <button id="draft-btn" class="mt-4 bg-blue-800 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-900 transition-colors flex items-center justify-center">
+                    Gerar Rascunho
+                </button>
+                <div id="draft-output" class="mt-4 p-4 bg-gray-100 rounded-lg hidden"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center text-gray-500 mt-8 p-4">
+        &copy; 2025 Hospital Universitário Regional de Maringá - Todos os direitos reservados.
+    </footer>
+
+    <script>
+        const API_KEY = "";
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${API_KEY}`;
+        
+        const explainBtn = document.getElementById('explain-btn');
+        const draftBtn = document.getElementById('draft-btn');
+        const termInput = document.getElementById('term-input');
+        const draftInput = document.getElementById('draft-input');
+        const explainOutput = document.getElementById('explain-output');
+        const draftOutput = document.getElementById('draft-output');
+
+        async function callGeminiAPI(prompt, outputDiv, button) {
+            outputDiv.innerHTML = `<div class="loader mx-auto"></div>`;
+            outputDiv.classList.remove('hidden');
+            button.disabled = true;
+
+            const payload = {
+                contents: [{
+                    parts: [{
+                        text: prompt
+                    }]
+                }],
+            };
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Erro de API: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                const text = result.candidates[0].content.parts[0].text;
+                
+                outputDiv.innerHTML = text.replace(/\n/g, '<br>');
+
+            } catch (error) {
+                console.error("Erro ao chamar a API:", error);
+                outputDiv.innerHTML = `<span class="text-red-600">Erro: Não foi possível processar a sua solicitação. Tente novamente.</span>`;
+            } finally {
+                button.disabled = false;
+            }
+        }
+
+        explainBtn.addEventListener('click', () => {
+            const term = termInput.value;
+            if (term) {
+                const prompt = `Explique de forma simples e concisa o termo médico ou o CID: "${term}"`;
+                callGeminiAPI(prompt, explainOutput, explainBtn);
+            } else {
+                explainOutput.innerHTML = `<span class="text-red-600">Por favor, insira um termo para explicar.</span>`;
+                explainOutput.classList.remove('hidden');
+            }
+        });
+
+        draftBtn.addEventListener('click', () => {
+            const reason = draftInput.value;
+            if (reason) {
+                const prompt = `Com base na seguinte razão para um pedido de reconsideração de atestado, crie um rascunho de e-mail formal e objetivo para o RH: "${reason}"`;
+                callGeminiAPI(prompt, draftOutput, draftBtn);
+            } else {
+                draftOutput.innerHTML = `<span class="text-red-600">Por favor, descreva o motivo para gerar o rascunho.</span>`;
+                draftOutput.classList.remove('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>
